@@ -1,0 +1,58 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@layer base {
+  :root {
+    --primary: #ffb4aa;
+    --primary-container: #e50914;
+    --background: #131313;
+    --surface-variant: #353535;
+  }
+
+  body {
+    @apply bg-surface text-white antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4 {
+    @apply tracking-tight font-bold;
+  }
+}
+
+@layer components {
+  .glass-nav {
+    @apply bg-surface-container/70 backdrop-blur-[24px] transition-all duration-300 border-none;
+  }
+
+  .btn-primary {
+    @apply text-white px-8 py-2.5 rounded-full font-bold transition-all duration-300 shadow-[0px_20px_40px_rgba(229,9,20,0.15)] active:scale-95 border-none;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-container) 100%);
+  }
+
+  .btn-secondary {
+    @apply text-white px-8 py-2.5 rounded-full font-bold transition-all duration-300 backdrop-blur-[24px] active:scale-95 border-none;
+    background: rgba(53, 53, 53, 0.2);
+  }
+
+  .card-gradient {
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  }
+
+  .hero-scrim {
+    background: linear-gradient(to top, #131313 5%, transparent 60%);
+  }
+
+  .hero-mask {
+    background: linear-gradient(to right, #131313 10%, transparent 60%);
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
